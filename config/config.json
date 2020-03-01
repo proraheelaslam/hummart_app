@@ -24,11 +24,19 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "postgres",
-    "password": "as",
-    "database": "hummart",
-    "host": "127.0.0.1",
+    "username": "tieowhwlqzlwnw",
+    "password": "499d9e7495831c24a170a78de6fa5ae69ff3847bec48d3766259ef39c93f6d0b",
+    "database": "d42dqtp684qjs2",
+    "host": "ec2-54-80-184-43.compute-1.amazonaws.com",
+    "url":"postgres://tieowhwlqzlwnw:499d9e7495831c24a170a78de6fa5ae69ff3847bec48d3766259ef39c93f6d0b@ec2-54-80-184-43.compute-1.amazonaws.com:5432/d42dqtp684qjs2",
+    "use_env_variable":"postgres://tieowhwlqzlwnw:499d9e7495831c24a170a78de6fa5ae69ff3847bec48d3766259ef39c93f6d0b@ec2-54-80-184-43.compute-1.amazonaws.com:5432/d42dqtp684qjs2",
     "dialect": "postgres",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "ssl": true,
+    "dialectOptions":{
+      "ssl":{
+        "require":true
+      }
+    }
   }
 }
