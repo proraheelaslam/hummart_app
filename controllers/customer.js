@@ -15,7 +15,7 @@ const getProfile = async (req,res)=> {
         let customerProfileRes = successResponse('Profile has been fetch',customerProfile);
         return customerProfileRes;
     }catch (e) {
-        return errorResponse();
+        return e.message;
     }
 };
 
