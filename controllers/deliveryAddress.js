@@ -2,9 +2,6 @@ const Joi = require('@hapi/joi');
 const DeliveryAddress = require('../models/DeliveryAddress');
 const { successResponse, errorResponse, validationResponse, notFoundResponse } = require('../utils/apiResponse');
 const multer  = require('multer');
-const fs = require('fs');
-const { promisify } = require('util');
-const unlinkAsync = promisify(fs.unlink);
 
 const getAdresses = async (req,res)=> {
 
@@ -104,7 +101,6 @@ const updateAddress = async (upload,req,res)=> {
             city: reqData.city,
         };
         if (req.file !== undefined){
-            await unlinkAsync(req.file.path);
             let image = req.file.filename;
             dAddressObj.image = image;
         }

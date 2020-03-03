@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e9e7c25-172f-424c-a223-121fa0c8d903" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/customer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/SubCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/SubCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/deliveryAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/deliveryAddress.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deliveryAddress.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="deliveryAddress.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/deliveryAddress.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="113" column="19" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="19" />
+            <state relative-caret-position="160">
+              <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -85,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/customer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -110,8 +104,8 @@
       <find>rel</find>
       <find>upload</find>
       <find>uploadImage</find>
-      <find>uploadPhoto</find>
       <find>key</find>
+      <find>uploadPhoto</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,9 +131,9 @@
         <option value="$PROJECT_DIR$/config/config.json" />
         <option value="$PROJECT_DIR$/routes/api.js" />
         <option value="$PROJECT_DIR$/utils/constants.js" />
-        <option value="$PROJECT_DIR$/controllers/deliveryAddress.js" />
         <option value="$PROJECT_DIR$/models/DeliveryAddress.js" />
         <option value="$PROJECT_DIR$/controllers/customer.js" />
+        <option value="$PROJECT_DIR$/controllers/deliveryAddress.js" />
       </list>
     </option>
   </component>
@@ -271,12 +265,12 @@
       <workItem from="1583056539640" duration="9627000" />
       <workItem from="1583164736526" duration="934000" />
       <workItem from="1583170062555" duration="3103000" />
-      <workItem from="1583244965481" duration="8043000" />
+      <workItem from="1583244965481" duration="8442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70905000" />
+    <option name="totallyTimeSpent" value="71304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -660,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/deliveryAddress.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="113" column="19" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/DeliveryAddress.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-215">
@@ -678,6 +665,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/deliveryAddress.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
         </state>
       </provider>
     </entry>
