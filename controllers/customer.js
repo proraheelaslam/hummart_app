@@ -15,7 +15,7 @@ const getProfile = async (req,res)=> {
         let customerProfileRes = successResponse('Profile has been fetch',customerProfile);
         return customerProfileRes;
     }catch (e) {
-        return e.message;
+        return res.send(errorResponse());
     }
 };
 
@@ -40,23 +40,24 @@ const updateProfile = async (upload,req,res)=> {
     }else {
 
         // update profile
+        let profileObj =  {
+            first_name: reqData.first_name,
+            last_name: reqData.last_name,
+            email:reqData.email,
+            latitude:reqData.latitude,
+            longitude:reqData.longitude,
+            address:reqData.address,
+            phone_number:reqData.phone_number,
+            city:reqData.city,
+        };
         let photo = '';
         if (req.file !== undefined){
             photo = req.file.filename ;
+            profileObj.photo = photo;
         }
         try {
             const profileResult = await Customer.update(
-                {
-                    first_name: reqData.first_name,
-                    last_name: reqData.last_name,
-                    email:reqData.email,
-                    latitude:reqData.latitude,
-                    longitude:reqData.longitude,
-                    address:reqData.address,
-                    phone_number:reqData.phone_number,
-                    city:reqData.city,
-                    photo:photo,
-                },
+                profileObj,
                 { where: { id: 1 }, returning: true }
             );
             if(profileResult) {
@@ -81,6 +82,8 @@ const uploadPhoto = () => {
 
         },
         filename: function (req, file, cb) {
+
+
             cb(null, Date.now() +file.originalname);
         }
     });

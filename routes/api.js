@@ -5,6 +5,7 @@ const auth = require('../middleware/auth');
 
 const category = require('../controllers/category');
 const customer = require('../controllers/customer');
+const deliverAddress = require('../controllers/deliveryAddress');
 
 
 const storage = multer.diskStorage({
@@ -19,6 +20,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage:storage });
 const uploadCustomerPhoto = multer({ storage:customer.uploadPhoto() });
 
+const uploadDeliveryAddressImage = multer({ storage:deliverAddress.uploadImage() });
+
 /* API Routes */
 router.get('/customer/profile/:id', auth, async (req, res, next)=> {
     let profileData = await customer.getProfile(req, res);
@@ -28,6 +31,7 @@ router.post('/customer/profile/update', auth, uploadCustomerPhoto.single('photo'
 
     customer.updateProfile(upload,req,res);
 });
+
 router.get('/categories',auth, async (req, res, next) => {
     let categories = await category.getCategory();
     res.send(categories);
@@ -37,6 +41,20 @@ router.post('/categories/add', upload.single('image'), async function(req, res, 
     //return Model.db;
     category.addCategory(upload,req,res);
 
+});
+
+// delivery Address
+
+router.post('/customer/deliveryAddress/create', auth, uploadDeliveryAddressImage.single('image'), async (req, res) => {
+    deliverAddress.createAddress(upload,req, res);
+});
+
+router.post('/customer/deliveryAddress/update', auth, uploadDeliveryAddressImage.single('image'), async (req,res) => {
+    deliverAddress.updateAddress(upload,req,res);
+});
+
+router.get('/customer/deliveryAddress/:id', auth, (req,res)=> {
+   deliverAddress.getAdresses(req,res);
 });
 
 module.exports = router;

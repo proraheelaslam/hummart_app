@@ -18,8 +18,12 @@ SubCategory.init({
     category_id: {
         type: Sequelize.INTEGER
     }
-}, { sequelize, modelName: 'SubCategory',  timestamps: false,
-    tableName:'sub_categories' });
+}, { 
+    sequelize,
+    modelName: 'SubCategory', 
+    timestamps: false,
+    tableName:'sub_categories'
+ });
 
 
 module.exports = SubCategory;
