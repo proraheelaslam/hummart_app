@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e9e7c25-172f-424c-a223-121fa0c8d903" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/controllers/deliveryAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/deliveryAddress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,26 +47,26 @@
       <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="47" column="80" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="80" />
+            <state relative-caret-position="208">
+              <caret line="47" column="80" selection-start-line="47" selection-start-column="80" selection-end-line="47" selection-end-column="80" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="constants.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/constants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+            <state relative-caret-position="34">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deliveryAddress.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="deliveryAddress.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/deliveryAddress.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+            <state relative-caret-position="92">
+              <caret line="52" column="47" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -88,6 +89,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="category.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/category.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="37" column="45" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -105,7 +115,10 @@
       <find>upload</find>
       <find>uploadImage</find>
       <find>key</find>
+      <find>unlinkAsync</find>
+      <find>tr</find>
       <find>uploadPhoto</find>
+      <find>cat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,10 +143,10 @@
         <option value="$PROJECT_DIR$/models/index.js" />
         <option value="$PROJECT_DIR$/config/config.json" />
         <option value="$PROJECT_DIR$/routes/api.js" />
-        <option value="$PROJECT_DIR$/utils/constants.js" />
         <option value="$PROJECT_DIR$/models/DeliveryAddress.js" />
         <option value="$PROJECT_DIR$/controllers/customer.js" />
         <option value="$PROJECT_DIR$/controllers/deliveryAddress.js" />
+        <option value="$PROJECT_DIR$/utils/constants.js" />
       </list>
     </option>
   </component>
@@ -265,12 +278,12 @@
       <workItem from="1583056539640" duration="9627000" />
       <workItem from="1583164736526" duration="934000" />
       <workItem from="1583170062555" duration="3103000" />
-      <workItem from="1583244965481" duration="8442000" />
+      <workItem from="1583244965481" duration="9465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71304000" />
+    <option name="totallyTimeSpent" value="72327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -577,13 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/category.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../nex-backend/nex-backend-development/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
@@ -619,38 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Category.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/apiResponse.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="22" column="33" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Customer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="59" column="5" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="59" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="47" column="80" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -661,6 +639,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="47" column="80" selection-start-line="47" selection-start-column="80" selection-end-line="47" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="59" column="5" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="59" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Category.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/customer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -668,10 +667,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/category.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="37" column="45" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/deliveryAddress.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+        <state relative-caret-position="92">
+          <caret line="52" column="47" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>
