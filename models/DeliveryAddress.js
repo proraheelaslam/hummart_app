@@ -31,6 +31,12 @@ DeliveryAddress.init({
     image:{
             type:Sequelize.STRING
      },
+     area_colony:{
+                 type:Sequelize.STRING
+          },
+     house_flate_number:{
+                      type:Sequelize.STRING
+               },
     fullImagePath: {
 
              type: DataTypes.VIRTUAL,

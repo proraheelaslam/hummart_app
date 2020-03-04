@@ -36,6 +36,8 @@ const createAddress = async (upload,req, res) => {
         address_type: Joi.string().required(),
         city: Joi.string().required(),
         customer_id: Joi.string().required(),
+        house_flate_number: Joi.string().required(),
+        area_colony: Joi.string().required(),
 
     });
 
@@ -59,6 +61,8 @@ const createAddress = async (upload,req, res) => {
             longitude: reqData.longitude,
             city: reqData.city,
             customer_id: reqData.customer_id,
+            area_colony: reqData.area_colony,
+            house_flate_number: reqData.house_flate_number,
             image: image,
         });
         if(dAddressRes) {
@@ -85,6 +89,8 @@ const updateAddress = async (upload,req,res)=> {
         address_type: Joi.string().required(),
         city: Joi.string().required(),
         delivery_address_id: Joi.string().required(),
+        house_flate_number: Joi.string().required(),
+        area_colony: Joi.string().required(),
     });
     const { error } = schema.validate(reqData);
     if(error) {
@@ -99,6 +105,8 @@ const updateAddress = async (upload,req,res)=> {
             latitude: reqData.latitude,
             longitude: reqData.longitude,
             city: reqData.city,
+            area_colony: reqData.area_colony,
+            house_flate_number: reqData.house_flate_number,
         };
         if (req.file !== undefined){
             let image = req.file.filename;

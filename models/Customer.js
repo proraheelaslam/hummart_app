@@ -49,6 +49,14 @@ Customer.init({
         type: Sequelize.INTEGER
         // allowNull defaults to true
     },
+    house_flate_number: {
+        type: Sequelize.STRING
+        // allowNull defaults to true
+    },
+    area_colony: {
+        type: Sequelize.STRING
+        // allowNull defaults to true
+    },
     fullImagePath: {
 
         type: DataTypes.VIRTUAL,

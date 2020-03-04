@@ -31,6 +31,8 @@ const updateProfile = async (upload,req,res)=> {
         address: Joi.string().required(),
         phone_number: Joi.string().required(),
         city: Joi.string().required(),
+        house_flate_number: Joi.string().required(),
+        area_colony: Joi.string().required(),
         //image: Joi.string().required(),
 
     });
@@ -49,6 +51,8 @@ const updateProfile = async (upload,req,res)=> {
             address:reqData.address,
             phone_number:reqData.phone_number,
             city:reqData.city,
+            area_colony:reqData.area_colony,
+            house_flate_number:reqData.house_flate_number,
         };
         let photo = '';
         if (req.file !== undefined){
