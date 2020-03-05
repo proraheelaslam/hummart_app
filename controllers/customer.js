@@ -2,7 +2,97 @@ const Joi = require('@hapi/joi');
 const Customer = require('../models/Customer');
 const { successResponse, errorResponse, validationResponse, notFoundResponse } = require('../utils/apiResponse');
 const multer  = require('multer');
+const verificationCode  = 5050;
 
+//
+
+const register = async (req,res)=> {
+
+    try {
+
+        const schema = Joi.object().keys({
+            phone_number: Joi.string().required(),
+        });
+        const { error } = schema.validate(req.body);
+
+        if(error) {
+            res.send(validationResponse(error.message));
+        }else {
+
+            let customResponse = {};
+            let phoneNumber  = req.body.phone_number;
+
+            let resCustomer = await Customer.findOne({
+                where: {
+                    phone_number: phoneNumber
+                }
+            });
+            
+            if(resCustomer) {
+
+                customResponse = successResponse('You has been register successfully',resCustomer);
+            }else {
+                let res = await Customer.create({
+                    first_name:'',
+                    last_name: '',
+                    email:'',
+                    latitude:0.0,
+                    longitude:0.0,
+                    address:'',
+                    phone_number:phoneNumber,
+                    city:'',
+                    area_colony:'',
+                    house_flate_number:'',
+                });
+                customResponse = successResponse('You has been register successfully',res);
+            }
+            return res.send(customResponse);
+        }
+
+    }catch (e) {
+        return res.send(errorResponse());
+    }
+};
+
+const verifyCode = async (req,res)=> {
+
+    try {
+        let phone  = req.body.phone_number;
+        let code  = req.body.code;
+
+        const schema = Joi.object().keys({
+            phone_number: Joi.string().required(),
+            code: Joi.string().required(),
+        });
+        const { error } = schema.validate(req.body);
+        if(error) {
+            res.send(validationResponse(error.message));
+
+        }else {
+
+            let customPhoneRes = await Customer.findOne({
+                where: {
+                    phone_number: phone
+                }
+            });
+            if(customPhoneRes) {
+
+                if(code == verificationCode){
+
+                    res.send(successResponse('You code has been verify' , customPhoneRes));
+                }else {
+                    res.send(notFoundResponse('You code has been not verify'));
+                }
+            }else {
+                res.send(notFoundResponse('You are not register, please register'));
+            }
+        }
+
+
+    }catch (e) {
+        return res.send(errorResponse());
+    }
+};
 
 const getProfile = async (req,res)=> {
 
@@ -95,6 +185,8 @@ const uploadPhoto = () => {
 };
 
 let customer = {};
+customer.register = register;
+customer.verifyCode = verifyCode;
 customer.getProfile = getProfile;
 customer.updateProfile = updateProfile;
 customer.uploadPhoto = uploadPhoto;

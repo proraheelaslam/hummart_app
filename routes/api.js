@@ -23,6 +23,17 @@ const uploadCustomerPhoto = multer({ storage:customer.uploadPhoto() });
 const uploadDeliveryAddressImage = multer({ storage:deliverAddress.uploadImage() });
 
 /* API Routes */
+
+router.post('/customer/register', auth, upload.none(), async (req, res, next)=> {
+    let profileData = await customer.register(req, res);
+    res.send(profileData);
+});
+
+router.post('/customer/verifyCode', auth, upload.none(), async (req, res, next)=> {
+    let profileData = await customer.verifyCode(req, res);
+    res.send(profileData);
+});
+
 router.get('/customer/profile/:id', auth, async (req, res, next)=> {
     let profileData = await customer.getProfile(req, res);
     res.send(profileData);
