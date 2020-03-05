@@ -27,7 +27,7 @@ const register = async (req,res)=> {
                     phone_number: phoneNumber
                 }
             });
-            
+
             if(resCustomer) {
 
                 customResponse = successResponse('You has been register successfully',resCustomer);
@@ -81,7 +81,7 @@ const verifyCode = async (req,res)=> {
 
                     res.send(successResponse('You code has been verify' , customPhoneRes));
                 }else {
-                    res.send(notFoundResponse('You code has been not verify'));
+                    res.send(notFoundResponse('You code is incorrect'));
                 }
             }else {
                 res.send(notFoundResponse('You are not register, please register'));
