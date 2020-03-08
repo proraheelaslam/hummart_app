@@ -6,6 +6,7 @@ const auth = require('../middleware/auth');
 const category = require('../controllers/category');
 const customer = require('../controllers/customer');
 const deliverAddress = require('../controllers/deliveryAddress');
+const address = require('../controllers/address');
 
 
 const storage = multer.diskStorage({
@@ -67,5 +68,19 @@ router.post('/customer/deliveryAddress/update', auth, uploadDeliveryAddressImage
 router.get('/customer/deliveryAddress/:id', auth, (req,res)=> {
    deliverAddress.getAdresses(req,res);
 });
+
+// addresses
+router.post('/customer/addresses/create', auth, uploadDeliveryAddressImage.single('image'), async (req, res) => {
+    address.createAddress(upload,req, res);
+});
+
+router.post('/customer/addresses/update', auth, uploadDeliveryAddressImage.single('image'), async (req,res) => {
+    address.updateAddress(upload,req,res);
+});
+
+router.get('/customer/addresses/:id', auth, (req,res)=> {
+    address.getAdresses(req,res);
+});
+
 
 module.exports = router;

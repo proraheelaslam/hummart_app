@@ -1,5 +1,8 @@
 const Joi = require('@hapi/joi');
+const constants = require('../utils/constants');
 const Customer = require('../models/Customer');
+const DeliveryAddress = require('../models/DeliveryAddress');
+const Address = require('../models/Address');
 const { successResponse, errorResponse, validationResponse, notFoundResponse } = require('../utils/apiResponse');
 const multer  = require('multer');
 const verificationCode  = 5050;
@@ -30,8 +33,14 @@ const register = async (req,res)=> {
 
             if(resCustomer) {
 
-                customResponse = successResponse('You has been register successfully',resCustomer);
+                let resOb = {
+                    phone_number:resCustomer.phone_number,
+                    code:5050,
+                    token:constants.AUTH_TOKEN
+                };
+                customResponse = successResponse('You has been register successfully',resOb);
             }else {
+
                 let res = await Customer.create({
                     first_name:'',
                     last_name: '',
@@ -44,7 +53,11 @@ const register = async (req,res)=> {
                     area_colony:'',
                     house_flate_number:'',
                 });
-                customResponse = successResponse('You has been register successfully',res);
+                customResponse = successResponse('You has been register successfully',{
+                    phone_number:res.phone_number,
+                    code:5050,
+                    token:constants.AUTH_TOKEN
+                });
             }
             return res.send(customResponse);
         }
@@ -112,6 +125,7 @@ const getProfile = async (req,res)=> {
 const updateProfile = async (upload,req,res)=> {
 
     let reqData = req.body;
+    let customerId = reqData.customer_id;
     const schema = Joi.object().keys({
         first_name: Joi.string().required(),
         last_name: Joi.string().required(),
@@ -123,6 +137,7 @@ const updateProfile = async (upload,req,res)=> {
         city: Joi.string().required(),
         house_flate_number: Joi.string().required(),
         area_colony: Joi.string().required(),
+        customer_id: Joi.string().required(),
         //image: Joi.string().required(),
 
     });
@@ -152,9 +167,34 @@ const updateProfile = async (upload,req,res)=> {
         try {
             const profileResult = await Customer.update(
                 profileObj,
-                { where: { id: 1 }, returning: true }
+                { where: { id: customerId }, returning: true }
             );
             if(profileResult) {
+
+                let dAddress = await DeliveryAddress.findOne({
+                    where: {
+                        customer_id: customerId
+                    }
+                });
+
+                if(!dAddress){
+
+                    let dAddresObj = {
+                        name: 'Address Name',
+                        email : reqData.email,
+                        address_type:reqData.address_type,
+                        address:reqData.address,
+                        latitude: reqData.latitude,
+                        longitude: reqData.longitude,
+                        city: reqData.city,
+                        customer_id: reqData.customer_id,
+                        area_colony: reqData.area_colony,
+                        house_flate_number: reqData.house_flate_number,
+                        image: '',
+                    };
+                    let dAddressRes = await DeliveryAddress.create(dAddresObj);
+                    let address = await Address.create(dAddresObj);
+                }
                 let result = successResponse('Profile has been updated successfully ',profileResult[1][0].get());
                 res.send(result);
             }else {
