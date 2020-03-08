@@ -1,5 +1,5 @@
 const Joi = require('@hapi/joi');
-const DeliveryAddress = require('../models/DeliveryAddress');
+const Address = require('../models/Address');
 const { successResponse, errorResponse, validationResponse, notFoundResponse } = require('../utils/apiResponse');
 const multer  = require('multer');
 
@@ -7,15 +7,15 @@ const getAdresses = async (req,res)=> {
 
     let customerDAddress;
     try {
-        let dAddress = await DeliveryAddress.findAll({
+        let dAddress = await Address.findAll({
             where: {
                 customer_id: req.params.id
             }
         });
         if(dAddress) {
-             customerDAddress = successResponse('Delivery address has been fetch',dAddress);
+             customerDAddress = successResponse('Address has been fetch',dAddress);
         }else {
-             customerDAddress = notFoundResponse('Delivery address not found',dAddress);
+             customerDAddress = notFoundResponse('Address not found',dAddress);
         }
 
         return res.send(customerDAddress);
@@ -52,7 +52,7 @@ const createAddress = async (upload,req, res) => {
             image = req.file.filename ;
         }
         // create new D Address
-        let dAddressRes = await DeliveryAddress.create({
+        let dAddressRes = await Address.create({
             name: reqData.name,
             email : reqData.email,
             address_type:reqData.address_type,
@@ -88,7 +88,7 @@ const updateAddress = async (upload,req,res)=> {
         address: Joi.string().required(),
         address_type: Joi.string().required(),
         city: Joi.string().required(),
-        delivery_address_id: Joi.string().required(),
+        address_id: Joi.string().required(),
         house_flate_number: Joi.string().required(),
         area_colony: Joi.string().required(),
     });
@@ -113,12 +113,12 @@ const updateAddress = async (upload,req,res)=> {
             dAddressObj.image = image;
         }
         // update address
-      let dAddress = await DeliveryAddress.update(dAddressObj, { where:{ id: reqData.delivery_address_id } , returning:true  });
+      let dAddress = await Address.update(dAddressObj, { where:{ id: reqData.address_id } , returning:true  });
         //res.send(Object.keys(dAddress[1]).length);
       if(Object.keys(dAddress[1]).length > 0) {
-          result = successResponse('Delivery address has been updated successfully', dAddress[1][0].get());
+          result = successResponse('Address has been updated successfully', dAddress[1][0].get());
       }else {
-          result = notFoundResponse('Delivery address is not update');
+          result = notFoundResponse('Address is not update');
       }
       res.send(result);
     }

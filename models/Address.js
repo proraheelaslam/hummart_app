@@ -1,9 +1,9 @@
 const { sequelize , Sequelize, DataTypes } = require('./index');
 const constants = require('../utils/constants');
 
-class DeliveryAddress extends Sequelize.Model {}
+class Address extends Sequelize.Model {}
 
-DeliveryAddress.init({
+Address.init({
     name:{
         type:Sequelize.STRING
     },
@@ -48,9 +48,9 @@ DeliveryAddress.init({
          }
 }, {
     sequelize,
-    modelName: 'DeliveryAddress',
+    modelName: 'Address',
     timestamps: false,
-    tableName: 'delivery_addresses'
+    tableName: 'addresses'
 });
 
-module.exports = DeliveryAddress;
+module.exports = Address;
