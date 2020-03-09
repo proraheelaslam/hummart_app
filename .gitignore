@@ -3,3 +3,4 @@
 /node_modules
 /config/config.json
 /utils/constants.js
+/public/upload

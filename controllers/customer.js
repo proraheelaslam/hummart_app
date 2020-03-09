@@ -32,11 +32,9 @@ const register = async (req,res)=> {
             });
 
             if(resCustomer) {
-
                 let resOb = {
                     phone_number:resCustomer.phone_number,
                     code:5050,
-                    token:constants.AUTH_TOKEN
                 };
                 customResponse = successResponse('You has been register successfully',resOb);
             }else {
@@ -56,7 +54,6 @@ const register = async (req,res)=> {
                 customResponse = successResponse('You has been register successfully',{
                     phone_number:res.phone_number,
                     code:5050,
-                    token:constants.AUTH_TOKEN
                 });
             }
             return res.send(customResponse);
@@ -92,7 +89,11 @@ const verifyCode = async (req,res)=> {
 
                 if(code == verificationCode){
 
-                    res.send(successResponse('You code has been verify' , customPhoneRes));
+
+                     let csObj =  await Customer.update({is_register_number:1 }, { where: { id: customPhoneRes.id }, returning: true });
+                     csObj = JSON.parse(JSON.stringify(csObj[1][0].get()));
+                     csObj.code = constants.AUTH_TOKEN;
+                    res.send(successResponse('You code has been verify' , csObj));
                 }else {
                     res.send(notFoundResponse('You code is incorrect'));
                 }
@@ -100,7 +101,6 @@ const verifyCode = async (req,res)=> {
                 res.send(notFoundResponse('You are not register, please register'));
             }
         }
-
 
     }catch (e) {
         return res.send(errorResponse());
@@ -158,6 +158,7 @@ const updateProfile = async (upload,req,res)=> {
             city:reqData.city,
             area_colony:reqData.area_colony,
             house_flate_number:reqData.house_flate_number,
+            is_complete_profile:1,
         };
         let photo = '';
         if (req.file !== undefined){

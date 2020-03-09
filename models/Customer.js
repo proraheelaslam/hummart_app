@@ -57,6 +57,14 @@ Customer.init({
         type: Sequelize.STRING
         // allowNull defaults to true
     },
+    is_complete_profile: {
+        type: Sequelize.INTEGER
+        // allowNull defaults to true
+    },
+    is_register_number: {
+        type: Sequelize.INTEGER
+        // allowNull defaults to true
+    },
     fullImagePath: {
 
         type: DataTypes.VIRTUAL,

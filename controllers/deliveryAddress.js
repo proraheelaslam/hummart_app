@@ -7,7 +7,7 @@ const getAdresses = async (req,res)=> {
 
     let customerDAddress;
     try {
-        let dAddress = await DeliveryAddress.findAll({
+        let dAddress = await DeliveryAddress.findOne({
             where: {
                 customer_id: req.params.id
             }
@@ -17,7 +17,6 @@ const getAdresses = async (req,res)=> {
         }else {
              customerDAddress = notFoundResponse('Delivery address not found',dAddress);
         }
-
         return res.send(customerDAddress);
     }catch (e) {
         return res.send(e.message);
