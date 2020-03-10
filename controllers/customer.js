@@ -181,7 +181,7 @@ const updateProfile = async (upload,req,res)=> {
                 if(!dAddress){
 
                     let dAddresObj = {
-                        name: 'Address Name',
+                        name: reqData.first_name+ ' '+ reqData.last_name,
                         email : reqData.email,
                         address_type:reqData.address_type,
                         address:reqData.address,
