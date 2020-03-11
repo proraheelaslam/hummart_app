@@ -25,12 +25,12 @@ const uploadDeliveryAddressImage = multer({ storage:deliverAddress.uploadImage()
 
 /* API Routes */
 
-router.post('/customer/register', auth, upload.none(), async (req, res, next)=> {
+router.post('/customer/register', upload.none(), async (req, res, next)=> {
     let profileData = await customer.register(req, res);
     res.send(profileData);
 });
 
-router.post('/customer/verifyCode', auth, upload.none(), async (req, res, next)=> {
+router.post('/customer/verifyCode', upload.none(), async (req, res, next)=> {
     let profileData = await customer.verifyCode(req, res);
     res.send(profileData);
 });

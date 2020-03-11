@@ -89,11 +89,11 @@ const verifyCode = async (req,res)=> {
 
                 if(code == verificationCode){
 
-
                      let csObj =  await Customer.update({is_register_number:1 }, { where: { id: customPhoneRes.id }, returning: true });
                      csObj = JSON.parse(JSON.stringify(csObj[1][0].get()));
                      csObj.code = constants.AUTH_TOKEN;
-                    res.send(successResponse('You code has been verify' , csObj));
+                     res.send(successResponse('You code has been verify' , csObj));
+
                 }else {
                     res.send(notFoundResponse('You code is incorrect'));
                 }
@@ -115,7 +115,9 @@ const getProfile = async (req,res)=> {
                 id: req.params.id
             }
         });
-        let customerProfileRes = successResponse('Profile has been fetch',customerProfile);
+        let profileJson = JSON.parse(JSON.stringify(customerProfile));
+        profileJson.code = constants.AUTH_TOKEN;
+        let customerProfileRes = successResponse('Profile has been fetch',profileJson);
         return customerProfileRes;
     }catch (e) {
         return res.send(errorResponse());
@@ -159,6 +161,7 @@ const updateProfile = async (upload,req,res)=> {
             area_colony:reqData.area_colony,
             house_flate_number:reqData.house_flate_number,
             is_complete_profile:1,
+            address_type:'home',
         };
         let photo = '';
         if (req.file !== undefined){
@@ -196,7 +199,9 @@ const updateProfile = async (upload,req,res)=> {
                     let dAddressRes = await DeliveryAddress.create(dAddresObj);
                     let address = await Address.create(dAddresObj);
                 }
-                let result = successResponse('Profile has been updated successfully ',profileResult[1][0].get());
+                let profileJson = JSON.parse(JSON.stringify(profileResult[1][0].get()));
+                profileJson.code = constants.AUTH_TOKEN;
+                let result = successResponse('Profile has been updated successfully ',profileJson);
                 res.send(result);
             }else {
                 res.send(errorResponse());

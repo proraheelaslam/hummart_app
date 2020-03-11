@@ -65,6 +65,11 @@ Customer.init({
         type: Sequelize.INTEGER
         // allowNull defaults to true
     },
+    address_type: {
+        type: Sequelize.STRING,
+        defaultValue: 'home'
+        // allowNull defaults to true
+    },
     fullImagePath: {
 
         type: DataTypes.VIRTUAL,
