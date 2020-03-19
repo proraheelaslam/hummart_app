@@ -11,7 +11,7 @@ const getPage = async (req,res)=> {
    try {
        let pages = await Category.findOne({
            where: {
-               id: req.params.key
+               key: req.params.key
            }
        });
        let pageRes = successResponse('Page has been listed',pages);
