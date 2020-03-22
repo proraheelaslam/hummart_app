@@ -8,6 +8,7 @@ const customer = require('../controllers/customer');
 const deliverAddress = require('../controllers/deliveryAddress');
 const address = require('../controllers/address');
 const page = require('../controllers/page');
+const product = require('../controllers/product');
 
 
 const storage = multer.diskStorage({
@@ -85,9 +86,17 @@ router.get('/customer/addresses/:id', auth, (req,res)=> {
 
 // pages
 router.get('/page/:key', async (req,res)=> {
-
     let pages = await page.getPage(req,res);
     res.send(pages);
+});
+// bundle category products
+
+router.get('/bundle_category_products', (req,res)=> {
+    product.bundleCategoryProducts(req,res);
+});
+
+router.get('/bundles/:id', (req,res)=> {
+    product.getBundleCategoryProducts(req,res);
 });
 
 

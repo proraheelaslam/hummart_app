@@ -1,4 +1,5 @@
 const { sequelize, Sequelize, DataTypes } = require('./index');
+const Product = require('./Product');
 
 class SubCategory extends Sequelize.Model {}
 
@@ -24,6 +25,8 @@ SubCategory.init({
     timestamps: false,
     tableName:'sub_categories'
  });
+
+SubCategory.Product = SubCategory.hasMany( Product,{ foreignKey:'sub_category_id' });
 
 
 module.exports = SubCategory;
