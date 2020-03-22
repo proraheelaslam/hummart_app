@@ -45,7 +45,12 @@ const getBundleCategoryProducts = async (req, res)=> {
                         include: [
                             {
                                 model: SubCategory,
-                                include: Product
+                                include: [
+                                    {
+                                        model: Product,
+                                        include: ProductDiscount
+                                    }
+                                ],
 
                             }
 
