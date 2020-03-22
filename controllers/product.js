@@ -56,9 +56,7 @@ const getBundleCategoryProducts = async (req, res)=> {
 
             , where: { id: bundleId }});
 
-        let bundleObj = {};
-        bundleObj.bundles = bundles;
-        let dataRes = successResponse('Data has been listed',bundleObj);
+        let dataRes = successResponse('Data has been listed',bundles);
         return res.send(dataRes);
     }catch (e) {
         console.log(e.message);

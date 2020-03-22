@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e9e7c25-172f-424c-a223-121fa0c8d903" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/SubCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/SubCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Bundle.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="product.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/product.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="47" column="39" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="39" />
+            <state relative-caret-position="408">
+              <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -30,8 +29,8 @@
       <file leaf-file-name="Bundle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Bundle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="255">
+              <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -170,10 +169,10 @@
         <option value="$PROJECT_DIR$/models/ProductDiscount.js" />
         <option value="$PROJECT_DIR$/models/ProductImage.js" />
         <option value="$PROJECT_DIR$/routes/api.js" />
-        <option value="$PROJECT_DIR$/models/Bundle.js" />
         <option value="$PROJECT_DIR$/models/BundleCategory.js" />
         <option value="$PROJECT_DIR$/models/Product.js" />
         <option value="$PROJECT_DIR$/models/SubCategory.js" />
+        <option value="$PROJECT_DIR$/models/Bundle.js" />
         <option value="$PROJECT_DIR$/controllers/product.js" />
       </list>
     </option>
@@ -321,12 +320,12 @@
       <workItem from="1583941778043" duration="2595000" />
       <workItem from="1584581583327" duration="3411000" />
       <workItem from="1584633738715" duration="4483000" />
-      <workItem from="1584858499975" duration="14081000" />
+      <workItem from="1584858499975" duration="14738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115163000" />
+    <option name="totallyTimeSpent" value="115820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -692,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/BundleCategory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -720,10 +712,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/Bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/product.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="47" column="39" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="39" />
+        <state relative-caret-position="408">
+          <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
         </state>
       </provider>
     </entry>

@@ -18,7 +18,7 @@ Bundle.init({
         type: DataTypes.VIRTUAL,
         get() {
             if (this.image != '') {
-                return `${constants.APP_URL}/upload/bunldes/${this.image}`;
+                return `${constants.APP_URL}/upload/bundles/${this.image}`;
             }
         }
     }
